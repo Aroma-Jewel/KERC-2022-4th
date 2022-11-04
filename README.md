@@ -1,5 +1,5 @@
 
-# [[KERC2022] 제4회 한국인 감정인식 국제경진대회]((https://sites.google.com/view/kerc2022)) - 팀: 아로마쥬얼
+# [[KERC2022] 제4회 한국인 감정인식 국제경진대회](https://sites.google.com/view/kerc2022) - 팀: 아로마쥬얼
 
 ## 팀 소개 & 성적
 
@@ -67,7 +67,7 @@
 
 ## 하드웨어
 
-**Colab Pro Plus :** `CPU 12C, Nvidia A100 GPU x 1, 40MEM, 130GB`
+**Colab Pro Plus :** `CPU 12C, Nvidia A100 GPU x 2, 40MEM, 130GB`
 
 ## 디렉토리 구조
 
@@ -151,7 +151,10 @@ USER/
 - `models/`
 
   - 모델 class를 구현한 파일들이 있는 디렉토리입니다.  
-
+  - `roberta.py`
+  	- Roberta model을 기반으로 classification을 할 수 있도록 한 class가 구현된 파일입니다.
+  - `Rbert.py`
+  	- 기존 R-bert를 변형하여 previous sentence와 target sentence를 entitiy라고 생각하고 구현한 모델에 대한 class를 정의한 파일입니다.
 
 - `utils/`
 
@@ -164,8 +167,10 @@ USER/
       - 데이터를 tokenize하며 데이터의 type에 따라 `label`을 붙이고, 모델의 input형태로 변환하는 Encoder class를 정의한 파일입니다.
 	- `heads.py`
       - 모델에 사용된 layer 및 head들을 customize 할 수 있는 class들을 정의한 파일입니다.
+      - CLS token, SEP token, hidden states 등을 custom하게 사용합니다.
 	- `trainer.py`
       - 모델에 사용된 loss 및 Huggingface기반의 Custom Trainer class를 정의한 파일입니다.
+      - R-drop, R3F와 Smart loss를 이용할 수 있는 class입니다.
 
 - `args/`
     - 학습 및 추론에 필요한 Arguments들을 정의한 파일들이 있는 디렉토리입니다.
@@ -255,5 +260,18 @@ USER/
 |        load_best_model_at_end | 가장 성능이 좋은 weight checkpoint를 훈련 마지막 step에서 load할지 여부를 결정합니다.  |
 |        metric_for_best_model | 성능의 기준이 되는 metric을 설정합니다.                    |
 |        multiple_weights | soft voting을 실행할 weight들의 저장경로를 설정합니다.                   |
+
+## Reference
+
+- [Enriching Pre-trained Language Model with Entity Information for Relation Classification](https://arxiv.org/pdf/1905.08284.pdf)
+	- [Reference Github link 1](https://github.com/monologg/R-BERT)
+	- [Reference Github link 2](https://github.com/snoop2head/KLUE-RBERT)
+
+- [R-Drop: Regularized Dropout for Neural Networks(NeurlPS 2021)](https://arxiv.org/pdf/2106.14448v2.pdf)
+	- [Reference Github link](https://github.com/dropreg/R-Drop)
+
+- [A Deep Reinforced Model for Abstractive Summarization (ICLR 2018)](https://arxiv.org/pdf/1705.04304.pdf)
+
+- [SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization (ACL 2020)](https://aclanthology.org/2020.acl-main.197.pdf)
 
 
