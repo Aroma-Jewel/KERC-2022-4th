@@ -267,10 +267,10 @@ USER/
 	- [Reference Github link 1](https://github.com/monologg/R-BERT)
 	- [Reference Github link 2](https://github.com/snoop2head/KLUE-RBERT)
 
-- [R-Drop: Regularized Dropout for Neural Networks(NeurlPS 2021)](https://arxiv.org/pdf/2106.14448v2.pdf)
+- [R-Drop: Regularized Dropout for Neural Networks (NeurlPS 2021)](https://arxiv.org/pdf/2106.14448v2.pdf)
 	- [Reference Github link](https://github.com/dropreg/R-Drop)
 
-- [A Deep Reinforced Model for Abstractive Summarization (ICLR 2018)](https://arxiv.org/pdf/1705.04304.pdf)
+- [BETTER FINE-TUNING BY REDUCING REPRESENTATIONAL COLLAPSE (ICLR 2021)](https://arxiv.org/pdf/2008.03156v1.pdf)
 
 - [SMART: Robust and Efficient Fine-Tuning for Pre-trained Natural Language Models through Principled Regularized Optimization (ACL 2020)](https://aclanthology.org/2020.acl-main.197.pdf)
 
