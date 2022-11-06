@@ -83,6 +83,9 @@ USER/
 ├── requirements.txt
 ├── .gitignore
 │
+├── assets
+│   └── 아로마쥬얼_발표자료.pdf
+│
 ├── Datasets
 │   ├── example_submission.csv
 │   ├── private_test_data.tsv
